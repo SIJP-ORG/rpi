@@ -1,0 +1,13 @@
+hidscan - HID scanner sample for RPi3
+
+This is derived from HIDAPI under GPL3.
+	git clone git://github.com/signal11/hidapi.git
+Please refer to README.HIDAPI for details.
+
+This code currently assumes a specific USB HID device as follows.
+     (VendorID, ProductID) = (0x05fe, 0x1010)
+
+Make sure your HID raw device can be opened by normal users.
+This can be achived by adding a udev rule like this.
+  # cp etc/50-usb-hid.rules /etc/udev/rules.d/
+  # /etc/init.d/udev restart
