@@ -15,8 +15,11 @@ def process_isbn(isbn):
    author =  root.findall('.//dc:creator', namespaces)[0].text
    pubDate =  root.findall('.//pubDate', namespaces)[0].text
    publisher = root.findall('.//dc:publisher', namespaces)[0].text
-   transcript = root.findall('.//dcndl:titleTranscription', namespaces)[0].text
-
+   try:
+      transcript = root.findall('.//dcndl:titleTranscription', namespaces)[0].text
+   except:
+      transcript = ""
+      
    entry = {
       'title':title,
       'author':author,
